@@ -66,9 +66,13 @@ const findPersonById = (personId, done) => {
 };
 
 const findEditThenSave = (personId, done) => {
-  const foodToAdd = "hamburger";https://mongodbfccapp.herokuapp.com/
-
-  done(null /*, data*/);
+  const foodToAdd = "hamburger";
+  let person = findPersonById(personId, done);
+  Person.update(person, person.favoriteFoods.push(foodToAdd));
+  person.save((err, data) => {
+    if(err) return console.error(err);
+    done(null, data);
+  });
 };
 
 const findAndUpdate = (personName, done) => {
