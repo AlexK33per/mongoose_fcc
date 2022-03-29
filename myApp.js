@@ -17,7 +17,7 @@ Person = mongoose.model('Person', personSchema);
 
 const createAndSavePerson = (done) => {
   let person = new Person('Alejandro', 20, ['lechuga', 'huevos']);
-  data.save((err, data) => {
+  person.save((err, data) => {
     if(err) {
       console.log('Error saving person');
     } else {
