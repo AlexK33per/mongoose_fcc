@@ -24,7 +24,7 @@ const createAndSavePerson = (done) => {
       console.log(data);
     }
   })
-  done(null, data);
+  done(null, person);
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
