@@ -89,7 +89,7 @@ const removeById = (personId, done) => {
   Person.findByIdAndDelete(personId, (err, data) => {
     if(err) return console.error(err);
     done(null, data);
-  })
+  });
 };
 
 const removeManyPeople = (done) => {
@@ -97,7 +97,7 @@ const removeManyPeople = (done) => {
   Person.remove({ name: nameToRemove }, (err, data) => {
     if(err) return console.error(err);
     done(null, data);
-  })
+  });
 };
 
 const queryChain = (done) => {
