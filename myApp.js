@@ -1,5 +1,6 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
+require('mongodb')
 
 let Person;
 
@@ -102,7 +103,6 @@ const removeManyPeople = (done) => {
 
 const queryChain = (done) => {
   const foodToSearch = "burrito";
-
   done(null /*, data*/);
 };
 
